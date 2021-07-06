@@ -1,24 +1,13 @@
 # README
+The setups steps expect following tools installed on the system.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    • Ruby 2.4.2
+    • Rails 5.7.0
 
-Things you may want to cover:
+DATABASE: postgresql
 
-* Ruby version
 
-* System dependencies
+TECHNOLOGIES: Ruby, Rails
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+DESCRIPTION: Scapping various products of flipkart and store it in the database.
