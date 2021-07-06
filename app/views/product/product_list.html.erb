@@ -1,0 +1,35 @@
+<% if @product_lists.present? %>
+  <h1 style="text-align: center;"><%= find_product_list(params[:key])%> list!!!</h1>
+  <table>
+    <tr>
+      <% unless params[:key] == 'mobile' %>
+        <th>Brand</th>
+        <th>Combo</th>
+      <% else %>
+        <th>Name</th>
+        <th>Ratings</th>
+        <th>Reviews</th>
+      <% end %>
+      <th>Price</th>
+      <th>Url</th>
+    </tr>
+    <% @product_lists.each do |product| %>
+      <tr>
+        <% unless params[:key] == 'mobile' %>
+          <td><%= product.brand %></td>
+          <td><%= product.combo %></td>
+        <% else %>
+          <td><%= product.name %></td>
+          <td><%= product.rating %></td>
+          <td><%= product.review %></td>
+        <% end %>
+        <td><%= product.price %></td>
+        <td><%= link_to "See full details", "#{product.url}", target: '_blank', class: 'btn btn-success' %></td>
+      </tr>
+    <% end %>
+  </table><br>
+  <div class = "digg_pagination" >
+    <%= will_paginate @product_lists %>
+  </div><br>
+<% end %>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>

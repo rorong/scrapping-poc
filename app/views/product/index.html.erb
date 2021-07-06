@@ -1,0 +1,21 @@
+<% if @product_categories.present? %>
+  <h1 style="text-align: center;">Available Products !!!</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <% @product_categories.keys.each do |key| %>
+    <tr>
+      <td><%= find_product_list(key) %></td>
+      <td><%= link_to 'List', products_path(key: key), class: 'btn btn-success' %></td>
+      <td><%= link_to 'Crawl', crawls_path(key: key), class: 'btn btn-success' unless product_exists?(key) %></td>
+    </tr>
+  <% end %>
+</table>
+<% else %>
+  <h1 style="text-align: center;">There is no products available !!!</h1>
+<% end %>
+
+
+
