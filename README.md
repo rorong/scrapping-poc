@@ -2,7 +2,7 @@
 The setups steps expect following tools installed on the system.
 
     • Ruby 2.4.2
-    • Rails 5.7.0
+    • Rails 5.0.7.2
 
 DATABASE: postgresql
 
